@@ -25,7 +25,19 @@ public class BtcMarkets extends Market {
 				VirtualCurrency.BTC,
 				Currency.AUD
 			});
+		CURRENCY_PAIRS.put(VirtualCurrency.ETC, new String[]{
+				VirtualCurrency.BTC,
+				Currency.AUD
+			});
 		CURRENCY_PAIRS.put(VirtualCurrency.ETH, new String[]{
+				VirtualCurrency.BTC,
+				Currency.AUD
+			});
+		CURRENCY_PAIRS.put(VirtualCurrency.XRP, new String[]{
+				VirtualCurrency.BTC,
+				Currency.AUD
+			});
+		CURRENCY_PAIRS.put(VirtualCurrency.BCH, new String[]{
 				VirtualCurrency.BTC,
 				Currency.AUD
 			});

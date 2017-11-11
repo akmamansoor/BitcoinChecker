@@ -11,45 +11,37 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
-public class Korbit extends Market {
+public class NegocieCoins extends Market {
 
-	private final static String NAME = "Korbit";
-	private final static String TTS_NAME = NAME;
-	private final static String URL = "https://api.korbit.co.kr/v1/ticker/detailed?currency_pair=%1$s_%2$s";
+	private final static String NAME = "NegocieCoins";
+	private final static String TTS_NAME = "Negocie Coins";
+	private final static String URL = "http://www.negociecoins.com.br/api/v3/%1$s%2$s/ticker";
 	private final static HashMap<String, CharSequence[]> CURRENCY_PAIRS = new LinkedHashMap<>();
 	static {
 		CURRENCY_PAIRS.put(VirtualCurrency.BTC, new String[]{
-				Currency.KRW
-		});
-		CURRENCY_PAIRS.put(VirtualCurrency.ETH, new String[]{
-				Currency.KRW
-		});
-		CURRENCY_PAIRS.put(VirtualCurrency.ETC, new String[]{
-				Currency.KRW
-		});
-		CURRENCY_PAIRS.put(VirtualCurrency.XRP, new String[]{
-				Currency.KRW
-		});
+				Currency.BRL
+			});
+		CURRENCY_PAIRS.put(VirtualCurrency.LTC, new String[]{
+				Currency.BRL
+			});
 	}
 
-	public Korbit() {
+	public NegocieCoins() {
 		super(NAME, TTS_NAME, CURRENCY_PAIRS);
 	}
-	
+
 	@Override
 	public String getUrl(int requestId, CheckerInfo checkerInfo) {
-		return String.format(URL, checkerInfo.getCurrencyBaseLowerCase(),
-				checkerInfo.getCurrencyCounterLowerCase());
+		return String.format(URL, checkerInfo.getCurrencyBase(), checkerInfo.getCurrencyCounter());
 	}
 	
 	@Override
 	protected void parseTickerFromJsonObject(int requestId, JSONObject jsonObject, Ticker ticker, CheckerInfo checkerInfo) throws Exception {
-		ticker.bid = jsonObject.getDouble("bid");
-		ticker.ask = jsonObject.getDouble("ask");
-		ticker.vol = jsonObject.getDouble("volume");
+		ticker.bid = jsonObject.getDouble("buy");
+		ticker.ask = jsonObject.getDouble("sell");
+		ticker.vol = jsonObject.getDouble("vol");
 		ticker.high = jsonObject.getDouble("high");
 		ticker.low = jsonObject.getDouble("low");
 		ticker.last = jsonObject.getDouble("last");
-		ticker.timestamp = jsonObject.getLong("timestamp");
 	}
 }
