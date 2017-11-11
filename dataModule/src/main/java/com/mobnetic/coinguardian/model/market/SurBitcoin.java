@@ -20,7 +20,7 @@ public class SurBitcoin extends Market {
 	static {
 		CURRENCY_PAIRS.put(VirtualCurrency.BTC, new String[]{
 				Currency.VEF
-			});
+		});
 	}
 
 	public SurBitcoin() {
@@ -31,7 +31,7 @@ public class SurBitcoin extends Market {
 	public String getUrl(int requestId, CheckerInfo checkerInfo) {
 		return String.format(URL, checkerInfo.getCurrencyBase(), checkerInfo.getCurrencyCounter());
 	}
-	
+
 	@Override
 	protected void parseTickerFromJsonObject(int requestId, JSONObject jsonObject, Ticker ticker, CheckerInfo checkerInfo) throws Exception {
 		ticker.bid = jsonObject.getDouble("buy");
