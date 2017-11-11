@@ -21,10 +21,14 @@ public class SurBitcoin extends Market {
 		CURRENCY_PAIRS.put(VirtualCurrency.BTC, new String[]{
 				Currency.VEF
 <<<<<<< HEAD
+<<<<<<< HEAD
 			});
 =======
 		});
 >>>>>>> refs/remotes/mobnetic/master
+=======
+		});
+>>>>>>> origin/master
 	}
 
 	public SurBitcoin() {
@@ -36,10 +40,14 @@ public class SurBitcoin extends Market {
 		return String.format(URL, checkerInfo.getCurrencyBase(), checkerInfo.getCurrencyCounter());
 	}
 <<<<<<< HEAD
+<<<<<<< HEAD
 	
 =======
 
 >>>>>>> refs/remotes/mobnetic/master
+=======
+
+>>>>>>> origin/master
 	@Override
 	protected void parseTickerFromJsonObject(int requestId, JSONObject jsonObject, Ticker ticker, CheckerInfo checkerInfo) throws Exception {
 		ticker.bid = jsonObject.getDouble("buy");

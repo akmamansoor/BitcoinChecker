@@ -122,7 +122,10 @@ public class MarketsConfig {
 		addMarket(new SurBitcoin());
 		addMarket(new VBtc());
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> origin/master
 		addMarket(new Urdubit());
 		addMarket(new NegocieCoins());
 		addMarket(new BitMEX());
@@ -139,6 +142,9 @@ public class MarketsConfig {
 		addMarket(new Braziliex());
 		addMarket(new Abucoins());
 		addMarket(new Zebpay());
+<<<<<<< HEAD
 >>>>>>> refs/remotes/mobnetic/master
+=======
+>>>>>>> origin/master
 	}
 }
