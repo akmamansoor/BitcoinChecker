@@ -1,9 +1,9 @@
 package com.mobnetic.coinguardian.config;
 
-import java.util.LinkedHashMap;
-
 import com.mobnetic.coinguardian.model.Market;
 import com.mobnetic.coinguardian.model.market.*;
+
+import java.util.LinkedHashMap;
 
 public class MarketsConfig {
 
@@ -11,7 +11,7 @@ public class MarketsConfig {
 	private final static void addMarket(Market market) {
 		MarketsConfig.MARKETS.put(market.key, market);
 	}
-	
+
 	static {
 		addMarket(new Bitstamp());
 		addMarket(new Btcchina());
@@ -121,5 +121,24 @@ public class MarketsConfig {
 		addMarket(new ChileBit());
 		addMarket(new SurBitcoin());
 		addMarket(new VBtc());
+<<<<<<< HEAD
+=======
+		addMarket(new Urdubit());
+		addMarket(new NegocieCoins());
+		addMarket(new BitMEX());
+		addMarket(new BitFlyer());
+		addMarket(new BitFlyerFX());
+		addMarket(new Coinone());
+		addMarket(new Bithumb());
+		addMarket(new Coinsph());
+		addMarket(new Bl3p());
+		addMarket(new SurBtc());
+		addMarket(new CoinFloor());
+		addMarket(new Lykke());
+		addMarket(new Coinnest());
+		addMarket(new Braziliex());
+		addMarket(new Abucoins());
+		addMarket(new Zebpay());
+>>>>>>> refs/remotes/mobnetic/master
 	}
 }
